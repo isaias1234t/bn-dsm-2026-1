@@ -88,11 +88,11 @@ export type PrismaVersion = {
 }
 
 /**
- * Prisma Client JS version: 6.19.2
+ * Prisma Client JS version: 6.19.3
  * Query Engine version: c2990dca591cba766e3b7ef5d9e8a84796e47ab7
  */
 export const prismaVersion: PrismaVersion = {
-  client: "6.19.2",
+  client: "6.19.3",
   engine: "c2990dca591cba766e3b7ef5d9e8a84796e47ab7"
 }
 
@@ -390,7 +390,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Categoria: 'Categoria'
+  Categoria: 'Categoria',
+  Fornecedor: 'Fornecedor'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +407,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "categoria"
+    modelProps: "categoria" | "fornecedor"
     txIsolationLevel: never
   }
   model: {
@@ -484,6 +485,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Fornecedor: {
+      payload: Prisma.$FornecedorPayload<ExtArgs>
+      fields: Prisma.FornecedorFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FornecedorFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FornecedorFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>
+        }
+        findFirst: {
+          args: Prisma.FornecedorFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FornecedorFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>
+        }
+        findMany: {
+          args: Prisma.FornecedorFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>[]
+        }
+        create: {
+          args: Prisma.FornecedorCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>
+        }
+        createMany: {
+          args: Prisma.FornecedorCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.FornecedorDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>
+        }
+        update: {
+          args: Prisma.FornecedorUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>
+        }
+        deleteMany: {
+          args: Prisma.FornecedorDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FornecedorUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.FornecedorUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FornecedorPayload>
+        }
+        aggregate: {
+          args: Prisma.FornecedorAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFornecedor>
+        }
+        groupBy: {
+          args: Prisma.FornecedorGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FornecedorGroupByOutputType>[]
+        }
+        findRaw: {
+          args: Prisma.FornecedorFindRawArgs<ExtArgs>
+          result: Prisma.JsonObject
+        }
+        aggregateRaw: {
+          args: Prisma.FornecedorAggregateRawArgs<ExtArgs>
+          result: Prisma.JsonObject
+        }
+        count: {
+          args: Prisma.FornecedorCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FornecedorCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -507,6 +582,25 @@ export const CategoriaScalarFieldEnum = {
 } as const
 
 export type CategoriaScalarFieldEnum = (typeof CategoriaScalarFieldEnum)[keyof typeof CategoriaScalarFieldEnum]
+
+
+export const FornecedorScalarFieldEnum = {
+  id: 'id',
+  razao_social: 'razao_social',
+  nome_fantasia: 'nome_fantasia',
+  cnpj: 'cnpj',
+  email: 'email',
+  logradouro: 'logradouro',
+  num_imovel: 'num_imovel',
+  complemento: 'complemento',
+  bairro: 'bairro',
+  municipio: 'municipio',
+  uf: 'uf',
+  cep: 'cep',
+  telefone: 'telefone'
+} as const
+
+export type FornecedorScalarFieldEnum = (typeof FornecedorScalarFieldEnum)[keyof typeof FornecedorScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -645,6 +739,7 @@ export interface PrismaClientOptions {
 }
 export type GlobalOmitConfig = {
   categoria?: Prisma.CategoriaOmit
+  fornecedor?: Prisma.FornecedorOmit
 }
 
 /* Types for Logging */

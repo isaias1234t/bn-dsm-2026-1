@@ -22,3 +22,8 @@ export * from './enums.ts';
  * 
  */
 export type Categoria = Prisma.CategoriaModel
+/**
+ * Model Fornecedor
+ * 
+ */
+export type Fornecedor = Prisma.FornecedorModel

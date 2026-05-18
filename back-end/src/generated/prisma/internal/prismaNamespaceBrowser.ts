@@ -49,7 +49,8 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
-  Categoria: 'Categoria'
+  Categoria: 'Categoria',
+  Fornecedor: 'Fornecedor'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -64,6 +65,25 @@ export const CategoriaScalarFieldEnum = {
 } as const
 
 export type CategoriaScalarFieldEnum = (typeof CategoriaScalarFieldEnum)[keyof typeof CategoriaScalarFieldEnum]
+
+
+export const FornecedorScalarFieldEnum = {
+  id: 'id',
+  razao_social: 'razao_social',
+  nome_fantasia: 'nome_fantasia',
+  cnpj: 'cnpj',
+  email: 'email',
+  logradouro: 'logradouro',
+  num_imovel: 'num_imovel',
+  complemento: 'complemento',
+  bairro: 'bairro',
+  municipio: 'municipio',
+  uf: 'uf',
+  cep: 'cep',
+  telefone: 'telefone'
+} as const
+
+export type FornecedorScalarFieldEnum = (typeof FornecedorScalarFieldEnum)[keyof typeof FornecedorScalarFieldEnum]
 
 
 export const SortOrder = {
